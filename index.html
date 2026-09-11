@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meiji Supakamolsenee — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EEF0EA;
+    --paper-alt:#E4E7DE;
+    --ink:#1B2733;
+    --ink-soft:#4B5A63;
+    --amber:#B87424;
+    --teal:#3B6E64;
+    --line:#C7CBBF;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--teal);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+
+  .wrap{max-width:920px; margin:0 auto; padding:0 28px;}
+  .prose{max-width:640px;}
+
+  /* HERO */
+  header.hero{padding:64px 0 0;}
+  .hero-top{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px;}
+  .hero-top .role{font-size:14px; color:var(--ink-soft);}
+  .hero-top .contact{font-size:14px; text-align:right; color:var(--ink-soft);}
+  .hero-top .contact a{color:var(--ink-soft); text-decoration:none; border-bottom:1px solid var(--line);}
+  .hero-top .contact a:hover{color:var(--teal); border-color:var(--teal);}
+
+  h1.name{
+    font-family:'Fraunces', serif;
+    font-optical-sizing:auto;
+    font-weight:500;
+    font-size:clamp(40px, 7vw, 64px);
+    line-height:1.03;
+    margin:18px 0 6px;
+    letter-spacing:-0.01em;
+  }
+  p.tagline{
+    font-size:19px;
+    max-width:580px;
+    color:var(--ink-soft);
+    margin:0 0 40px;
+  }
+
+  /* METRIC TICKER */
+  .ticker{
+    background:var(--ink);
+    color:var(--paper);
+    padding:22px 0;
+    overflow:hidden;
+  }
+  .ticker-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0;
+    max-width:920px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+  .stat{
+    flex:1 1 160px;
+    padding:6px 24px 6px 0;
+    border-right:1px solid rgba(238,240,234,0.18);
+    margin-right:24px;
+  }
+  .stat:last-child{border-right:none; margin-right:0;}
+  .stat .num{
+    font-family:'JetBrains Mono', monospace;
+    font-size:26px;
+    color:var(--amber);
+    display:block;
+  }
+  .stat .label{font-size:13px; color:rgba(238,240,234,0.72); display:block; margin-top:2px;}
+
+  /* SECTIONS */
+  section{padding:64px 0;}
+  section.alt{background:var(--paper-alt);}
+  h2.section-title{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:28px;
+    margin:0 0 28px;
+  }
+  p{margin:0 0 16px;}
+
+  /* CASE STUDIES */
+  .case{
+    padding:36px 0;
+    border-top:1px solid var(--line);
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:32px;
+  }
+  .case:last-child{border-bottom:1px solid var(--line);}
+  .case-meta{color:var(--ink-soft); font-size:14px;}
+  .case-meta .org{display:block; color:var(--ink); font-weight:500; margin-bottom:2px;}
+  .case h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:22px;
+    margin:0 0 10px;
+  }
+  .case .result{
+    margin-top:14px;
+    padding-left:14px;
+    border-left:2px solid var(--amber);
+    font-size:15px;
+  }
+  .case .result .num{font-family:'JetBrains Mono', monospace; color:var(--amber);}
+  .case .tools{font-size:13px; color:var(--ink-soft); margin-top:14px;}
+
+  @media (max-width:640px){
+    .case{grid-template-columns:1fr; gap:10px;}
+  }
+
+  /* TIMELINE */
+  .timeline{border-left:2px solid var(--line); margin-left:6px;}
+  .tl-item{position:relative; padding:0 0 32px 28px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:"";
+    position:absolute; left:-7px; top:4px;
+    width:12px; height:12px; border-radius:50%;
+    background:var(--paper); border:2px solid var(--teal);
+  }
+  .tl-item .when{font-size:13px; color:var(--ink-soft); font-family:'JetBrains Mono', monospace;}
+  .tl-item h3{font-family:'Fraunces', serif; font-weight:500; font-size:19px; margin:4px 0 2px;}
+  .tl-item .org{color:var(--ink-soft); font-size:15px; margin-bottom:8px;}
+  .tl-item ul{margin:8px 0 0; padding-left:18px;}
+  .tl-item li{margin-bottom:6px; font-size:15px;}
+
+  /* SKILLS */
+  .skill-group{margin-bottom:22px;}
+  .skill-group .cat{font-size:14px; color:var(--ink-soft); margin-bottom:10px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    border:1px solid var(--line);
+    padding:6px 12px;
+    border-radius:3px;
+    font-size:14px;
+    background:transparent;
+  }
+
+  /* FOOTER */
+  footer{padding:56px 0 72px;}
+  footer h2.section-title{margin-bottom:14px;}
+  footer p{color:var(--ink-soft); max-width:480px;}
+  .footer-links{margin-top:18px; font-size:15px;}
+  .footer-links a{display:block; margin-bottom:6px; text-decoration:none; border-bottom:1px solid var(--line); width:fit-content;}
+  .footer-links a:hover{border-color:var(--teal);}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <div class="role">Analytics → Product</div>
+      <div class="contact">
+        Chicago, IL · open to relocation<br>
+        <a href="mailto:meiji.supakamolsenee@gmail.com">meiji.supakamolsenee@gmail.com</a> · (812) 391-2438
+      </div>
+    </div>
+    <h1 class="name">Meiji Supakamolsenee</h1>
+    <p class="tagline">I spend my days turning ambiguous business questions into tested hypotheses, and lately into product requirements — this is a log of that work.</p>
+  </div>
+</header>
+
+<div class="ticker">
+  <div class="ticker-row">
+    <div class="stat"><span class="num">$20M+</span><span class="label">portfolio managed</span></div>
+    <div class="stat"><span class="num">5%</span><span class="label">conversion lift, 90 days</span></div>
+    <div class="stat"><span class="num">20%</span><span class="label">faster reporting workflow</span></div>
+    <div class="stat"><span class="num">25%</span><span class="label">ROAS improvement</span></div>
+    <div class="stat"><span class="num">1st</span><span class="label">of 80+ teams, UMICH jam</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap prose">
+    <h2 class="section-title">What I do</h2>
+    <p>I'm a Senior Analyst at Kepler Group, where I manage performance strategy across a $20M+ media portfolio and run end-to-end experimentation for CRM lifecycle campaigns — writing the hypotheses, picking the success metrics, and building the test frameworks myself.</p>
+    <p>The part of that work I keep gravitating toward is earlier in the process: sitting with Product and Engineering to turn a workflow complaint into an actual spec, or building a tool because the reporting process was too slow to wait for someone else to fix it. That's the throughline behind the projects below — the analysis was rarely the finish line, it was the input to something I then went and built.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2 class="section-title">Selected work</h2>
+
+    <div class="case">
+      <div class="case-meta"><span class="org">Kepler Group</span>2025</div>
+      <div>
+        <h3>An agent that reads Slack and Gmail so no one has to at 2am</h3>
+        <p>After-hours client escalations were getting triaged manually, which meant delays whenever no one happened to be watching Slack. I designed and built a monitoring agent on Gemini, wired through Zapier into Slack and Gmail's APIs, that classifies incoming message urgency and fires a real-time alert when something actually needs a human.</p>
+        <div class="result">Cut out the manual triage step entirely — <span class="num">no more after-hours escalation lag</span>.</div>
+        <div class="tools">Gemini · Zapier · Slack API · Gmail API</div>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-meta"><span class="org">Kepler Group</span>2025</div>
+      <div>
+        <h3>Proving lifecycle changes actually move conversion</h3>
+        <p>I lead experimentation for CRM lifecycle campaigns end to end: translating a stakeholder's business question into a testable hypothesis, choosing the metric that will actually settle the argument, and designing the test itself before anyone touches a campaign.</p>
+        <div class="result">Delivered a <span class="num">5% conversion lift</span> within 90 days of launch.</div>
+        <div class="tools">SQL · A/B testing · Statistical analysis</div>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-meta"><span class="org">The Clorox Company</span>2025</div>
+      <div>
+        <h3>Finding where customers actually drop off</h3>
+        <p>Mapped customer behavior across digital and retail touchpoints to find where the journey was actually breaking down, then built a Power BI forecasting dashboard so regional stakeholders could see SKU-level demand at a glance instead of waiting on a report.</p>
+        <div class="result">Findings were <span class="num">used directly</span> in quarterly go-to-market strategy.</div>
+        <div class="tools">Power BI · Forecasting · Journey mapping</div>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-meta"><span class="org">UMICH Innovation Jam</span>Nov 2024</div>
+      <div>
+        <h3>Journey Genie — an AI travel-booking tool, built in a weekend</h3>
+        <p>Led product discovery from a blank page: talked to users, turned that research into requirements and a roadmap, and scoped the MVP an 80-plus-team hackathon could actually ship in the time given.</p>
+        <div class="result"><span class="num">1st place</span>, FinTech track, out of 80+ competing teams.</div>
+        <div class="tools">Product discovery · Roadmapping · 0-to-1</div>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-meta"><span class="org">Personal project</span>May 2026</div>
+      <div>
+        <h3>Fin — a paycheck calculator international students can actually follow</h3>
+        <p>U.S. payroll tax is genuinely confusing if you didn't grow up with it. Built and iterated on a paycheck breakdown calculator with Claude, working through how to turn withholding, FICA, and take-home pay into a conversation instead of a wall of tax jargon.</p>
+        <div class="result">Shipped and open-sourced on <span class="num">GitHub</span>.</div>
+        <div class="tools">Built with Claude · Product writing</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="when">Jul 2025 — Present</div>
+        <h3>Senior Analyst, Optimization &amp; Innovation</h3>
+        <div class="org">Kepler Group · Chicago, IL</div>
+        <ul>
+          <li>Manage performance strategy across a $20M+ portfolio, shaping budget allocation and business strategy</li>
+          <li>Partner with Product and Engineering to translate workflow pain points into product requirements, building pacing and audience tools that cut reporting time by 20%</li>
+          <li>Lead end-to-end CRM lifecycle experimentation, delivering a 5% conversion lift within 90 days</li>
+          <li>Built an AI monitoring agent (Gemini, Zapier, Slack/Gmail APIs) that eliminated after-hours escalation delays</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="when">Jan — Apr 2025</div>
+        <h3>Data Analytics Consultant</h3>
+        <div class="org">The Clorox Company · Alpharetta, GA</div>
+        <ul>
+          <li>Mapped customer drop-off across digital and retail journeys, informing quarterly GTM strategy</li>
+          <li>Built a Power BI forecasting dashboard for regional, SKU-level demand</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="when">Jun 2023 — May 2024</div>
+        <h3>Campaign Analyst, Media Operations</h3>
+        <div class="org">The Basement Ad Agency · Indianapolis, IN</div>
+        <ul>
+          <li>Managed measurement and budget allocation across 20+ paid campaigns on TikTok, Meta, and Snapchat</li>
+          <li>Identified inefficiencies and improved ROAS by 25%</li>
+          <li>Prepared monthly client-facing reports on results, audience insight, and budget recommendations</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="when">May — Aug 2022</div>
+        <h3>Digital Marketing Intern</h3>
+        <div class="org">Domino's · Ann Arbor, MI</div>
+        <ul>
+          <li>Designed and analyzed 9 email A/B tests, contributing to a 5% increase in campaign-driven revenue</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap prose">
+    <h2 class="section-title">Education</h2>
+    <div class="tl-item" style="padding-left:0; border:none;">
+      <h3 style="margin-top:0;">MS, Business Analytics (STEM) — Distinction</h3>
+      <div class="org">University of Michigan, Stephen M. Ross School of Business · May 2025</div>
+    </div>
+    <div class="tl-item" style="padding-left:0; border:none; margin-top:22px;">
+      <h3>BS, Marketing &amp; Digital Social Media Applications — Distinction</h3>
+      <div class="org">Indiana University, Kelley School of Business · May 2023</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skill-group">
+      <div class="cat">Product &amp; strategy</div>
+      <div class="chips">
+        <span class="chip">Product requirements</span>
+        <span class="chip">0-to-1 discovery</span>
+        <span class="chip">Roadmapping</span>
+        <span class="chip">Experimentation design</span>
+        <span class="chip">Cross-functional partnership</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="cat">Data &amp; analysis</div>
+      <div class="chips">
+        <span class="chip">SQL</span>
+        <span class="chip">Python</span>
+        <span class="chip">R</span>
+        <span class="chip">Statistical analysis</span>
+        <span class="chip">Forecasting</span>
+        <span class="chip">A/B testing</span>
+        <span class="chip">Tableau</span>
+        <span class="chip">Power BI</span>
+        <span class="chip">GA4</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="cat">Media &amp; advertising</div>
+      <div class="chips">
+        <span class="chip">DV360</span>
+        <span class="chip">Yahoo DSP</span>
+        <span class="chip">Amazon DSP</span>
+        <span class="chip">Google Ads</span>
+        <span class="chip">Meta</span>
+        <span class="chip">TikTok</span>
+        <span class="chip">Pinterest</span>
+        <span class="chip">Reddit</span>
+        <span class="chip">Spotify</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="cat">Certifications</div>
+      <div class="chips">
+        <span class="chip">Google Generative AI Leader (Proctored)</span>
+        <span class="chip">Google Analytics</span>
+        <span class="chip">Google Display Ads</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="alt">
+  <div class="wrap prose">
+    <h2 class="section-title">Get in touch</h2>
+    <p>Open to Product Management and analytics-to-product roles, and happy to talk through any of the work above in more depth.</p>
+    <div class="footer-links">
+      <a href="mailto:meiji.supakamolsenee@gmail.com">meiji.supakamolsenee@gmail.com</a>
+      <a href="#">LinkedIn — add your profile URL here</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
