@@ -3,393 +3,386 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meiji Supakamolsenee — Portfolio</title>
+<title>Meiji Supakamolsenee | Analytics → Product</title>
+<script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          paper: '#EEF0EA',
+          paperalt: '#E4E7DE',
+          ink: '#1B2733',
+          inksoft: '#4B5A63',
+          amber: '#B87424',
+          teal: '#3B6E64',
+          line: '#C7CBBF',
+        },
+        fontFamily: {
+          serif: ['Fraunces', 'serif'],
+          sans: ['Inter', 'sans-serif'],
+          mono: ['JetBrains Mono', 'monospace'],
+        }
+      }
+    }
+  }
+</script>
 <style>
-  :root{
-    --paper:#EEF0EA;
-    --paper-alt:#E4E7DE;
-    --ink:#1B2733;
-    --ink-soft:#4B5A63;
-    --amber:#B87424;
-    --teal:#3B6E64;
-    --line:#C7CBBF;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Inter',sans-serif;
-    line-height:1.55;
-    -webkit-font-smoothing:antialiased;
-  }
-  a{color:var(--teal);}
-  a:focus-visible, button:focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
-  @media (prefers-reduced-motion: reduce){
-    *{animation:none !important; transition:none !important;}
-  }
-
-  .wrap{max-width:920px; margin:0 auto; padding:0 28px;}
-  .prose{max-width:640px;}
-
-  /* HERO */
-  header.hero{padding:64px 0 0;}
-  .hero-top{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px;}
-  .hero-top .role{font-size:14px; color:var(--ink-soft);}
-  .hero-top .contact{font-size:14px; text-align:right; color:var(--ink-soft);}
-  .hero-top .contact a{color:var(--ink-soft); text-decoration:none; border-bottom:1px solid var(--line);}
-  .hero-top .contact a:hover{color:var(--teal); border-color:var(--teal);}
-
-  h1.name{
-    font-family:'Fraunces', serif;
-    font-optical-sizing:auto;
-    font-weight:500;
-    font-size:clamp(40px, 7vw, 64px);
-    line-height:1.03;
-    margin:18px 0 6px;
-    letter-spacing:-0.01em;
-  }
-  p.tagline{
-    font-size:19px;
-    max-width:580px;
-    color:var(--ink-soft);
-    margin:0 0 40px;
-  }
-
-  /* METRIC TICKER */
-  .ticker{
-    background:var(--ink);
-    color:var(--paper);
-    padding:22px 0;
-    overflow:hidden;
-  }
-  .ticker-row{
-    display:flex;
-    flex-wrap:wrap;
-    gap:0;
-    max-width:920px;
-    margin:0 auto;
-    padding:0 28px;
-  }
-  .stat{
-    flex:1 1 160px;
-    padding:6px 24px 6px 0;
-    border-right:1px solid rgba(238,240,234,0.18);
-    margin-right:24px;
-  }
-  .stat:last-child{border-right:none; margin-right:0;}
-  .stat .num{
-    font-family:'JetBrains Mono', monospace;
-    font-size:26px;
-    color:var(--amber);
-    display:block;
-  }
-  .stat .label{font-size:13px; color:rgba(238,240,234,0.72); display:block; margin-top:2px;}
-
-  /* SECTIONS */
-  section{padding:64px 0;}
-  section.alt{background:var(--paper-alt);}
-  h2.section-title{
-    font-family:'Fraunces', serif;
-    font-weight:500;
-    font-size:28px;
-    margin:0 0 28px;
-  }
-  p{margin:0 0 16px;}
-
-  /* CASE STUDIES */
-  .case{
-    padding:36px 0;
-    border-top:1px solid var(--line);
-    display:grid;
-    grid-template-columns:220px 1fr;
-    gap:32px;
-  }
-  .case:last-child{border-bottom:1px solid var(--line);}
-  .case-meta{color:var(--ink-soft); font-size:14px;}
-  .case-meta .org{display:block; color:var(--ink); font-weight:500; margin-bottom:2px;}
-  .case h3{
-    font-family:'Fraunces', serif;
-    font-weight:500;
-    font-size:22px;
-    margin:0 0 10px;
-  }
-  .case .result{
-    margin-top:14px;
-    padding-left:14px;
-    border-left:2px solid var(--amber);
-    font-size:15px;
-  }
-  .case .result .num{font-family:'JetBrains Mono', monospace; color:var(--amber);}
-  .case .tools{font-size:13px; color:var(--ink-soft); margin-top:14px;}
-
-  @media (max-width:640px){
-    .case{grid-template-columns:1fr; gap:10px;}
-  }
-
-  /* TIMELINE */
-  .timeline{border-left:2px solid var(--line); margin-left:6px;}
-  .tl-item{position:relative; padding:0 0 32px 28px;}
-  .tl-item:last-child{padding-bottom:0;}
-  .tl-item::before{
-    content:"";
-    position:absolute; left:-7px; top:4px;
-    width:12px; height:12px; border-radius:50%;
-    background:var(--paper); border:2px solid var(--teal);
-  }
-  .tl-item .when{font-size:13px; color:var(--ink-soft); font-family:'JetBrains Mono', monospace;}
-  .tl-item h3{font-family:'Fraunces', serif; font-weight:500; font-size:19px; margin:4px 0 2px;}
-  .tl-item .org{color:var(--ink-soft); font-size:15px; margin-bottom:8px;}
-  .tl-item ul{margin:8px 0 0; padding-left:18px;}
-  .tl-item li{margin-bottom:6px; font-size:15px;}
-
-  /* SKILLS */
-  .skill-group{margin-bottom:22px;}
-  .skill-group .cat{font-size:14px; color:var(--ink-soft); margin-bottom:10px;}
-  .chips{display:flex; flex-wrap:wrap; gap:8px;}
-  .chip{
-    border:1px solid var(--line);
-    padding:6px 12px;
-    border-radius:3px;
-    font-size:14px;
-    background:transparent;
-  }
-
-  /* FOOTER */
-  footer{padding:56px 0 72px;}
-  footer h2.section-title{margin-bottom:14px;}
-  footer p{color:var(--ink-soft); max-width:480px;}
-  .footer-links{margin-top:18px; font-size:15px;}
-  .footer-links a{display:block; margin-bottom:6px; text-decoration:none; border-bottom:1px solid var(--line); width:fit-content;}
-  .footer-links a:hover{border-color:var(--teal);}
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  .case-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .case-body.open { max-height: 2400px; }
+  .rot { transition: transform 0.3s ease; }
+  .rot.open { transform: rotate(45deg); }
+  ::selection { background: rgba(184,116,36,0.2); }
 </style>
 </head>
-<body>
+<body class="bg-paper text-ink font-sans">
 
-<header class="hero">
-  <div class="wrap">
-    <div class="hero-top">
-      <div class="role">Analytics → Product</div>
-      <div class="contact">
-        Chicago, IL · open to relocation<br>
-        <a href="mailto:meiji.supakamolsenee@gmail.com">meiji.supakamolsenee@gmail.com</a> · (812) 391-2438
-      </div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-paper/90 backdrop-blur-md border-b border-line">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#top" class="font-serif font-semibold text-lg tracking-tight">Meiji S.</a>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-inksoft">
+      <a href="#focus" class="hover:text-ink transition-colors">Focus</a>
+      <a href="#work" class="hover:text-ink transition-colors">Work</a>
+      <a href="#experience" class="hover:text-ink transition-colors">Experience</a>
+      <a href="#contact" class="hover:text-ink transition-colors">Contact</a>
     </div>
-    <h1 class="name">Meiji Supakamolsenee</h1>
-    <p class="tagline">I spend my days turning ambiguous business questions into tested hypotheses, and lately into product requirements — this is a log of that work.</p>
+    <a href="mailto:meiji.supakamolsenee@gmail.com" class="text-sm font-semibold px-4 py-2 rounded-full bg-ink text-paper hover:bg-inksoft transition-colors">Get in touch</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="top" class="relative overflow-hidden">
+  <div class="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full bg-amber/10 blur-3xl -z-10"></div>
+  <div class="max-w-6xl mx-auto px-6 pt-20 pb-16">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-paperalt text-xs font-semibold tracking-wide text-inksoft mb-6">
+      <span class="w-1.5 h-1.5 rounded-full bg-amber"></span>
+      Analytics → Product · Chicago, IL
+    </div>
+    <h1 class="font-serif font-medium text-5xl md:text-7xl leading-[1.05] max-w-3xl">
+      I turn ambiguous problems into tested hypotheses<span class="text-amber">.</span>
+    </h1>
+    <p class="mt-6 text-lg md:text-xl text-inksoft max-w-2xl leading-relaxed">
+      Senior Analyst at Kepler Group by day, builder of the tools that made my own job faster on the side. This is a record of both — the analysis, and what I built once the analysis pointed somewhere.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="#work" class="px-6 py-3 rounded-full bg-ink text-paper font-semibold text-sm hover:bg-inksoft transition-colors">See the work</a>
+      <a href="mailto:meiji.supakamolsenee@gmail.com" class="px-6 py-3 rounded-full border border-line font-semibold text-sm hover:border-ink transition-colors">meiji.supakamolsenee@gmail.com</a>
+    </div>
+  </div>
+
+  <!-- TICKER -->
+  <div class="bg-ink text-paper py-5">
+    <div class="max-w-6xl mx-auto px-6 flex flex-wrap gap-x-10 gap-y-3">
+      <div><span class="font-mono text-amber text-xl">$20M+</span> <span class="text-paper/70 text-sm ml-1">portfolio managed</span></div>
+      <div><span class="font-mono text-amber text-xl">+5%</span> <span class="text-paper/70 text-sm ml-1">conversion, −12% CPA</span></div>
+      <div><span class="font-mono text-amber text-xl">25%</span> <span class="text-paper/70 text-sm ml-1">ROAS improvement</span></div>
+      <div><span class="font-mono text-amber text-xl">1st</span> <span class="text-paper/70 text-sm ml-1">of 80+ teams, UMICH jam</span></div>
+      <div><span class="font-mono text-amber text-xl">20%</span> <span class="text-paper/70 text-sm ml-1">faster reporting workflow</span></div>
+    </div>
   </div>
 </header>
 
-<div class="ticker">
-  <div class="ticker-row">
-    <div class="stat"><span class="num">$20M+</span><span class="label">portfolio managed</span></div>
-    <div class="stat"><span class="num">5%</span><span class="label">conversion lift, 90 days</span></div>
-    <div class="stat"><span class="num">20%</span><span class="label">faster reporting workflow</span></div>
-    <div class="stat"><span class="num">25%</span><span class="label">ROAS improvement</span></div>
-    <div class="stat"><span class="num">1st</span><span class="label">of 80+ teams, UMICH jam</span></div>
-  </div>
-</div>
-
-<section>
-  <div class="wrap prose">
-    <h2 class="section-title">What I do</h2>
-    <p>I'm a Senior Analyst at Kepler Group, where I manage performance strategy across a $20M+ media portfolio and run end-to-end experimentation for CRM lifecycle campaigns — writing the hypotheses, picking the success metrics, and building the test frameworks myself.</p>
-    <p>The part of that work I keep gravitating toward is earlier in the process: sitting with Product and Engineering to turn a workflow complaint into an actual spec, or building a tool because the reporting process was too slow to wait for someone else to fix it. That's the throughline behind the projects below — the analysis was rarely the finish line, it was the input to something I then went and built.</p>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap">
-    <h2 class="section-title">Selected work</h2>
-
-    <div class="case">
-      <div class="case-meta"><span class="org">Kepler Group</span>2025</div>
-      <div>
-        <h3>An agent that reads Slack and Gmail so no one has to at 2am</h3>
-        <p>After-hours client escalations were getting triaged manually, which meant delays whenever no one happened to be watching Slack. I designed and built a monitoring agent on Gemini, wired through Zapier into Slack and Gmail's APIs, that classifies incoming message urgency and fires a real-time alert when something actually needs a human.</p>
-        <div class="result">Cut out the manual triage step entirely — <span class="num">no more after-hours escalation lag</span>.</div>
-        <div class="tools">Gemini · Zapier · Slack API · Gmail API</div>
-      </div>
+<!-- FOCUS PILLARS -->
+<section id="focus" class="py-20 border-b border-line">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex items-end justify-between mb-12 flex-wrap gap-4">
+      <h2 class="font-serif text-3xl md:text-4xl font-medium">Where I spend my time</h2>
+      <p class="text-inksoft max-w-sm text-sm">Three threads that keep showing up, whether the deliverable is a dashboard or a shipped tool.</p>
     </div>
-
-    <div class="case">
-      <div class="case-meta"><span class="org">Kepler Group</span>2025</div>
-      <div>
-        <h3>Proving lifecycle changes actually move conversion</h3>
-        <p>I lead experimentation for CRM lifecycle campaigns end to end: translating a stakeholder's business question into a testable hypothesis, choosing the metric that will actually settle the argument, and designing the test itself before anyone touches a campaign.</p>
-        <div class="result">Delivered a <span class="num">5% conversion lift</span> within 90 days of launch.</div>
-        <div class="tools">SQL · A/B testing · Statistical analysis</div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="p-8 rounded-3xl bg-white border border-line hover:border-amber/40 hover:shadow-lg hover:shadow-amber/5 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-amber/10 flex items-center justify-center text-amber font-serif text-xl mb-6">01</div>
+        <h3 class="font-serif text-xl font-medium mb-3">Experimentation &amp; Testing</h3>
+        <p class="text-inksoft text-sm leading-relaxed">Turning "will this work?" into a hypothesis, a segmentation plan, a control group, and a number stakeholders can act on — end to end, not just the analysis.</p>
       </div>
-    </div>
-
-    <div class="case">
-      <div class="case-meta"><span class="org">The Clorox Company</span>2025</div>
-      <div>
-        <h3>Finding where customers actually drop off</h3>
-        <p>Mapped customer behavior across digital and retail touchpoints to find where the journey was actually breaking down, then built a Power BI forecasting dashboard so regional stakeholders could see SKU-level demand at a glance instead of waiting on a report.</p>
-        <div class="result">Findings were <span class="num">used directly</span> in quarterly go-to-market strategy.</div>
-        <div class="tools">Power BI · Forecasting · Journey mapping</div>
+      <div class="p-8 rounded-3xl bg-white border border-line hover:border-amber/40 hover:shadow-lg hover:shadow-amber/5 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-amber/10 flex items-center justify-center text-amber font-serif text-xl mb-6">02</div>
+        <h3 class="font-serif text-xl font-medium mb-3">Product Discovery</h3>
+        <p class="text-inksoft text-sm leading-relaxed">Talking to users under time pressure, cutting scope to an MVP that's actually buildable, and writing the requirements Engineering can pick up without a follow-up meeting.</p>
       </div>
-    </div>
-
-    <div class="case">
-      <div class="case-meta"><span class="org">UMICH Innovation Jam</span>Nov 2024</div>
-      <div>
-        <h3>Journey Genie — an AI travel-booking tool, built in a weekend</h3>
-        <p>Led product discovery from a blank page: talked to users, turned that research into requirements and a roadmap, and scoped the MVP an 80-plus-team hackathon could actually ship in the time given.</p>
-        <div class="result"><span class="num">1st place</span>, FinTech track, out of 80+ competing teams.</div>
-        <div class="tools">Product discovery · Roadmapping · 0-to-1</div>
-      </div>
-    </div>
-
-    <div class="case">
-      <div class="case-meta"><span class="org">Personal project</span>May 2026</div>
-      <div>
-        <h3>Fin — a paycheck calculator international students can actually follow</h3>
-        <p>U.S. payroll tax is genuinely confusing if you didn't grow up with it. Built and iterated on a paycheck breakdown calculator with Claude, working through how to turn withholding, FICA, and take-home pay into a conversation instead of a wall of tax jargon.</p>
-        <div class="result">Shipped and open-sourced on <span class="num">GitHub</span>.</div>
-        <div class="tools">Built with Claude · Product writing</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2 class="section-title">Experience</h2>
-    <div class="timeline">
-
-      <div class="tl-item">
-        <div class="when">Jul 2025 — Present</div>
-        <h3>Senior Analyst, Optimization &amp; Innovation</h3>
-        <div class="org">Kepler Group · Chicago, IL</div>
-        <ul>
-          <li>Manage performance strategy across a $20M+ portfolio, shaping budget allocation and business strategy</li>
-          <li>Partner with Product and Engineering to translate workflow pain points into product requirements, building pacing and audience tools that cut reporting time by 20%</li>
-          <li>Lead end-to-end CRM lifecycle experimentation, delivering a 5% conversion lift within 90 days</li>
-          <li>Built an AI monitoring agent (Gemini, Zapier, Slack/Gmail APIs) that eliminated after-hours escalation delays</li>
-        </ul>
-      </div>
-
-      <div class="tl-item">
-        <div class="when">Jan — Apr 2025</div>
-        <h3>Data Analytics Consultant</h3>
-        <div class="org">The Clorox Company · Alpharetta, GA</div>
-        <ul>
-          <li>Mapped customer drop-off across digital and retail journeys, informing quarterly GTM strategy</li>
-          <li>Built a Power BI forecasting dashboard for regional, SKU-level demand</li>
-        </ul>
-      </div>
-
-      <div class="tl-item">
-        <div class="when">Jun 2023 — May 2024</div>
-        <h3>Campaign Analyst, Media Operations</h3>
-        <div class="org">The Basement Ad Agency · Indianapolis, IN</div>
-        <ul>
-          <li>Managed measurement and budget allocation across 20+ paid campaigns on TikTok, Meta, and Snapchat</li>
-          <li>Identified inefficiencies and improved ROAS by 25%</li>
-          <li>Prepared monthly client-facing reports on results, audience insight, and budget recommendations</li>
-        </ul>
-      </div>
-
-      <div class="tl-item">
-        <div class="when">May — Aug 2022</div>
-        <h3>Digital Marketing Intern</h3>
-        <div class="org">Domino's · Ann Arbor, MI</div>
-        <ul>
-          <li>Designed and analyzed 9 email A/B tests, contributing to a 5% increase in campaign-driven revenue</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap prose">
-    <h2 class="section-title">Education</h2>
-    <div class="tl-item" style="padding-left:0; border:none;">
-      <h3 style="margin-top:0;">MS, Business Analytics (STEM) — Distinction</h3>
-      <div class="org">University of Michigan, Stephen M. Ross School of Business · May 2025</div>
-    </div>
-    <div class="tl-item" style="padding-left:0; border:none; margin-top:22px;">
-      <h3>BS, Marketing &amp; Digital Social Media Applications — Distinction</h3>
-      <div class="org">Indiana University, Kelley School of Business · May 2023</div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2 class="section-title">Skills</h2>
-
-    <div class="skill-group">
-      <div class="cat">Product &amp; strategy</div>
-      <div class="chips">
-        <span class="chip">Product requirements</span>
-        <span class="chip">0-to-1 discovery</span>
-        <span class="chip">Roadmapping</span>
-        <span class="chip">Experimentation design</span>
-        <span class="chip">Cross-functional partnership</span>
-      </div>
-    </div>
-
-    <div class="skill-group">
-      <div class="cat">Data &amp; analysis</div>
-      <div class="chips">
-        <span class="chip">SQL</span>
-        <span class="chip">Python</span>
-        <span class="chip">R</span>
-        <span class="chip">Statistical analysis</span>
-        <span class="chip">Forecasting</span>
-        <span class="chip">A/B testing</span>
-        <span class="chip">Tableau</span>
-        <span class="chip">Power BI</span>
-        <span class="chip">GA4</span>
-      </div>
-    </div>
-
-    <div class="skill-group">
-      <div class="cat">Media &amp; advertising</div>
-      <div class="chips">
-        <span class="chip">DV360</span>
-        <span class="chip">Yahoo DSP</span>
-        <span class="chip">Amazon DSP</span>
-        <span class="chip">Google Ads</span>
-        <span class="chip">Meta</span>
-        <span class="chip">TikTok</span>
-        <span class="chip">Pinterest</span>
-        <span class="chip">Reddit</span>
-        <span class="chip">Spotify</span>
-      </div>
-    </div>
-
-    <div class="skill-group">
-      <div class="cat">Certifications</div>
-      <div class="chips">
-        <span class="chip">Google Generative AI Leader (Proctored)</span>
-        <span class="chip">Google Analytics</span>
-        <span class="chip">Google Display Ads</span>
+      <div class="p-8 rounded-3xl bg-white border border-line hover:border-amber/40 hover:shadow-lg hover:shadow-amber/5 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-amber/10 flex items-center justify-center text-amber font-serif text-xl mb-6">03</div>
+        <h3 class="font-serif text-xl font-medium mb-3">Building the Fix Myself</h3>
+        <p class="text-inksoft text-sm leading-relaxed">When a workflow is broken and no one's assigned to fix it, learning the API and shipping something — an agent, a calculator, a dashboard — rather than waiting on a ticket.</p>
       </div>
     </div>
   </div>
 </section>
 
-<footer class="alt">
-  <div class="wrap prose">
-    <h2 class="section-title">Get in touch</h2>
-    <p>Open to Product Management and analytics-to-product roles, and happy to talk through any of the work above in more depth.</p>
-    <div class="footer-links">
-      <a href="mailto:meiji.supakamolsenee@gmail.com">meiji.supakamolsenee@gmail.com</a>
-      <a href="#">LinkedIn — add your profile URL here</a>
+<!-- WORK -->
+<section id="work" class="py-20 border-b border-line bg-paperalt/40">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex items-end justify-between mb-12 flex-wrap gap-4">
+      <h2 class="font-serif text-3xl md:text-4xl font-medium">Selected work</h2>
+      <p class="text-inksoft max-w-sm text-sm">Click any project to open the full story — challenge, strategy, execution, impact.</p>
+    </div>
+
+    <div id="case-list" class="space-y-4">
+      <!-- Case 1 -->
+      <div class="case rounded-3xl bg-white border border-line overflow-hidden">
+        <button class="case-toggle w-full text-left p-7 flex items-center justify-between gap-6">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-amber">Kepler Group · 2025</span>
+            <h3 class="font-serif text-2xl font-medium mt-1">The agent that reads Slack and Gmail so no one has to at 2am</h3>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Gemini API</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Zapier</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Slack &amp; Gmail APIs</span>
+            </div>
+          </div>
+          <span class="rot shrink-0 text-3xl font-light text-amber leading-none">+</span>
+        </button>
+        <div class="case-body px-7">
+          <div class="pb-8 border-t border-line pt-8 grid md:grid-cols-[140px_1fr] gap-8">
+            <div class="text-sm font-semibold text-inksoft">The Problem</div>
+            <p class="text-inksoft leading-relaxed">A client email came in after hours on a Friday and sat unread until Monday morning. It only happened once — but once was enough to convince me it needed a permanent fix rather than hoping no one else got unlucky.</p>
+            <div class="text-sm font-semibold text-inksoft">The Build</div>
+            <p class="text-inksoft leading-relaxed">Built a monitoring agent on Gemini, wired through Zapier into Slack and Gmail. The hard part wasn't the AI — it was the layers around it: Zapier had no real documentation to learn from, the APIs were new to me, and the agent needed time-of-week awareness (weeknight vs. weekend urgency reads differently) plus routing logic to send each alert to the correct line-of-business channel instead of one firehose.</p>
+            <div class="text-sm font-semibold text-inksoft">The Result</div>
+            <p class="text-inksoft leading-relaxed">No more waiting until Monday. Urgent messages get classified and routed in real time, regardless of when they land.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 2 -->
+      <div class="case rounded-3xl bg-white border border-line overflow-hidden">
+        <button class="case-toggle w-full text-left p-7 flex items-center justify-between gap-6">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-amber">Kepler Group · 2025</span>
+            <h3 class="font-serif text-2xl font-medium mt-1">Proving which lifecycle strategy actually moves conversion</h3>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">SQL</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">A/B testing</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">GA4</span>
+            </div>
+          </div>
+          <span class="rot shrink-0 text-3xl font-light text-amber leading-none">+</span>
+        </button>
+        <div class="case-body px-7">
+          <div class="pb-8 border-t border-line pt-8 grid md:grid-cols-[140px_1fr] gap-8">
+            <div class="text-sm font-semibold text-inksoft">The Question</div>
+            <p class="text-inksoft leading-relaxed">Which CRM messaging, audience, and lifecycle strategies could lift conversion among existing customers while improving acquisition efficiency? Stakeholders assumed more personalized lifecycle messaging would help broadly — the tests showed the real driver was segment and offer strategy, not personalization for its own sake.</p>
+            <div class="text-sm font-semibold text-inksoft">The Framework</div>
+            <p class="text-inksoft leading-relaxed">Ran multiple A/B tests across email/CRM audiences over ~90 days: segment the audience, assign treatment/control, measure conversion and CPA, run the statistical comparison, turn it into a recommendation. I connected CRM results with paid-media and GA4 data so we were judging downstream conversion, not just email opens.</p>
+            <div class="text-sm font-semibold text-inksoft">The Result</div>
+            <p class="text-inksoft leading-relaxed">Roughly <span class="font-mono text-amber">+5%</span> conversion lift and <span class="font-mono text-amber">−12%</span> CPA over 90 days, which reshaped how the client allocated budget across segments.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 3 -->
+      <div class="case rounded-3xl bg-white border border-line overflow-hidden">
+        <button class="case-toggle w-full text-left p-7 flex items-center justify-between gap-6">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-amber">The Clorox Company · 2025</span>
+            <h3 class="font-serif text-2xl font-medium mt-1">Finding the moment customers were ready to buy, not just where they dropped off</h3>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Power BI</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Journey mapping</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Seasonality analysis</span>
+            </div>
+          </div>
+          <span class="rot shrink-0 text-3xl font-light text-amber leading-none">+</span>
+        </button>
+        <div class="case-body px-7">
+          <div class="pb-8 border-t border-line pt-8 grid md:grid-cols-[140px_1fr] gap-8">
+            <div class="text-sm font-semibold text-inksoft">The Finding</div>
+            <p class="text-inksoft leading-relaxed">Mapped the consumer journey across awareness, digital research, and retail purchase. The opportunity wasn't a dramatic funnel drop-off — it was timing. Back-to-school consistently drove a spike in cleaning and home-care intent as households reset their routines, and the existing media plan didn't move with it.</p>
+            <div class="text-sm font-semibold text-inksoft">The Shift</div>
+            <p class="text-inksoft leading-relaxed">Recommended a calendar-based GTM approach instead of running the same messaging year-round: ramp awareness and consideration ahead of the seasonal peak, and lean the messaging into "getting the home ready" for the new routine.</p>
+            <div class="text-sm font-semibold text-inksoft">The Result</div>
+            <p class="text-inksoft leading-relaxed">Informed a full-funnel, calendar-based media and retail activation plan that fed directly into quarterly GTM strategy.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 4 -->
+      <div class="case rounded-3xl bg-white border border-line overflow-hidden">
+        <button class="case-toggle w-full text-left p-7 flex items-center justify-between gap-6">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-amber">UMICH Innovation Jam · Nov 2024 · 1st place</span>
+            <h3 class="font-serif text-2xl font-medium mt-1">Journey Genie — a travel assistant that knows what your points are worth</h3>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Product discovery</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">0-to-1</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">FinTech</span>
+            </div>
+          </div>
+          <span class="rot shrink-0 text-3xl font-light text-amber leading-none">+</span>
+        </button>
+        <div class="case-body px-7">
+          <div class="pb-8 border-t border-line pt-8 grid md:grid-cols-[140px_1fr] gap-8">
+            <div class="text-sm font-semibold text-inksoft">The Idea</div>
+            <p class="text-inksoft leading-relaxed">An AI travel-planning assistant that combines natural-language trip planning with credit-card rewards optimization. Describe a trip — destination, dates, budget — and the agent searches flights and hotels while weighing your points, transfer partners, and redemption value against just paying cash. The insight: most people are sitting on points they don't know how to value.</p>
+            <div class="text-sm font-semibold text-inksoft">The Research</div>
+            <p class="text-inksoft leading-relaxed">No time for a formal study, so I ran rapid qualitative interviews with classmates and potential travelers on how they plan trips and use rewards today, and where the friction actually was — comparing options, and deciding whether to redeem or save points.</p>
+            <div class="text-sm font-semibold text-inksoft">The Result</div>
+            <p class="text-inksoft leading-relaxed">Scoped the MVP down to trip search plus rewards-aware recommendations instead of a full booking platform — and won <span class="font-mono text-amber">1st place</span>, FinTech track, out of 80+ teams.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 5 -->
+      <div class="case rounded-3xl bg-white border border-line overflow-hidden">
+        <button class="case-toggle w-full text-left p-7 flex items-center justify-between gap-6">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-amber">Personal project · May 2026</span>
+            <h3 class="font-serif text-2xl font-medium mt-1">Fin — a paycheck calculator that explains itself</h3>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Built with Claude</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Product writing</span>
+            </div>
+          </div>
+          <span class="rot shrink-0 text-3xl font-light text-amber leading-none">+</span>
+        </button>
+        <div class="case-body px-7">
+          <div class="pb-8 border-t border-line pt-8 grid md:grid-cols-[140px_1fr] gap-8">
+            <div class="text-sm font-semibold text-inksoft">The Problem</div>
+            <p class="text-inksoft leading-relaxed">Payroll tax isn't one calculation — it depends on employee type, location, pay frequency, and jurisdiction. The hard part was simplifying that without giving international students an answer that was technically misleading.</p>
+            <div class="text-sm font-semibold text-inksoft">The Approach</div>
+            <p class="text-inksoft leading-relaxed">Built and iterated the calculator with Claude, writing toward "what does this mean for me?" instead of raw tax terminology — explain the concept, then the practical implication. The feature I'm proudest of is an AI-guided explanation flow that breaks a question into its relevant factors, explains it in plain English, and knows when to say "this is complex enough that you should talk to a professional" instead of guessing.</p>
+            <div class="text-sm font-semibold text-inksoft">The Result</div>
+            <p class="text-inksoft leading-relaxed">Shipped and open-sourced on GitHub.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="py-20 border-b border-line">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="font-serif text-3xl md:text-4xl font-medium mb-12">Experience</h2>
+    <div class="divide-y divide-line border-t border-b border-line">
+
+      <div class="py-8 grid md:grid-cols-[180px_1fr] gap-6">
+        <div>
+          <div class="font-mono text-xs text-inksoft">Jul 2025 — Present</div>
+        </div>
+        <div>
+          <h3 class="font-serif text-xl font-medium">Senior Analyst, Optimization &amp; Innovation</h3>
+          <div class="text-sm text-inksoft mb-3">Kepler Group · Chicago, IL</div>
+          <ul class="space-y-2 text-sm text-inksoft leading-relaxed list-disc list-inside">
+            <li>Manage performance strategy across a $20M+ portfolio, shaping budget allocation and business strategy</li>
+            <li>Partner with Product and Engineering to translate workflow pain points into product requirements, cutting reporting time by 20%</li>
+            <li>Lead end-to-end CRM lifecycle experimentation: +5% conversion, −12% CPA over 90 days</li>
+            <li>Built an AI monitoring agent (Gemini, Zapier, Slack/Gmail APIs) that eliminated after-hours escalation delays</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="py-8 grid md:grid-cols-[180px_1fr] gap-6">
+        <div>
+          <div class="font-mono text-xs text-inksoft">Jan — Apr 2025</div>
+        </div>
+        <div>
+          <h3 class="font-serif text-xl font-medium">Data Analytics Consultant</h3>
+          <div class="text-sm text-inksoft mb-3">The Clorox Company · Alpharetta, GA</div>
+          <ul class="space-y-2 text-sm text-inksoft leading-relaxed list-disc list-inside">
+            <li>Mapped the consumer journey and surfaced seasonal demand shifts that reshaped quarterly GTM strategy</li>
+            <li>Built a Power BI forecasting dashboard for regional, SKU-level demand</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="py-8 grid md:grid-cols-[180px_1fr] gap-6">
+        <div>
+          <div class="font-mono text-xs text-inksoft">Jun 2023 — May 2024</div>
+        </div>
+        <div>
+          <h3 class="font-serif text-xl font-medium">Campaign Analyst, Media Operations</h3>
+          <div class="text-sm text-inksoft mb-3">The Basement Ad Agency · Indianapolis, IN</div>
+          <ul class="space-y-2 text-sm text-inksoft leading-relaxed list-disc list-inside">
+            <li>Managed measurement and budget allocation across 20+ paid campaigns on TikTok, Meta, and Snapchat</li>
+            <li>Identified inefficiencies and improved ROAS by 25%</li>
+            <li>Prepared monthly client-facing reports on results, audience insight, and budget recommendations</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="py-8 grid md:grid-cols-[180px_1fr] gap-6">
+        <div>
+          <div class="font-mono text-xs text-inksoft">May — Aug 2022</div>
+        </div>
+        <div>
+          <h3 class="font-serif text-xl font-medium">Digital Marketing Intern</h3>
+          <div class="text-sm text-inksoft mb-3">Domino's · Ann Arbor, MI</div>
+          <ul class="space-y-2 text-sm text-inksoft leading-relaxed list-disc list-inside">
+            <li>Designed and analyzed 9 email A/B tests, contributing to a 5% increase in campaign-driven revenue</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 mt-16">
+      <div>
+        <h3 class="font-serif text-xl font-medium mb-3">Education</h3>
+        <div class="text-sm text-inksoft leading-relaxed">
+          <p class="mb-3"><span class="font-semibold text-ink">MS, Business Analytics (STEM)</span> — Distinction<br>University of Michigan, Ross School of Business · May 2025</p>
+          <p><span class="font-semibold text-ink">BS, Marketing &amp; Digital Social Media Applications</span> — Distinction<br>Indiana University, Kelley School of Business · May 2023</p>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-serif text-xl font-medium mb-3">Skills &amp; Certifications</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs px-3 py-1.5 rounded-full border border-line">SQL</span>
+          <span class="text-xs px-3 py-1.5 rounded-full border border-line">Python</span>
+          <span class="text-xs px-3 py-1.5 rounded-full border border-line">R</span>
+          <span class="text-xs px-3 py-1.5 rounded-full border border-line">A/B Testing</span>
+          <span class="text-xs px-3 py-1.5 rounded-full border border-line">Tableau</span>
+          <span class="text-xs px-3 py-1.5 rounded-full border border-line">Power BI</span>
+          <span class="text-xs px-3 py-1.5 rounded-full border border-line">GA4</span>
+          <span class="text-xs px-3 py-1.5 rounded-full border border-line">DV360</span>
+          <span class="text-xs px-3 py-1.5 rounded-full border border-line">Google Generative AI Leader</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="rounded-[2.5rem] bg-ink text-paper p-12 md:p-16 text-center relative overflow-hidden">
+      <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-amber/20 blur-3xl"></div>
+      <p class="font-serif text-2xl md:text-3xl leading-tight relative z-10">
+        Open to Product Management and analytics-to-product roles — happy to walk through any of this in more depth.
+      </p>
+      <div class="mt-8 relative z-10">
+        <a href="mailto:meiji.supakamolsenee@gmail.com" class="inline-block px-8 py-4 rounded-full bg-amber text-ink font-semibold hover:bg-paper transition-colors">meiji.supakamolsenee@gmail.com</a>
+      </div>
+      <p class="mt-6 text-sm text-paper/60 relative z-10">Chicago, IL · open to relocation · (812) 391-2438</p>
+    </div>
+  </div>
+</section>
+
+<footer class="py-10 text-center text-xs text-inksoft">
+  © Meiji Supakamolsenee, 2026
 </footer>
+
+<script>
+  document.querySelectorAll('.case-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const body = btn.nextElementSibling;
+      const icon = btn.querySelector('.rot');
+      const isOpen = body.classList.contains('open');
+      document.querySelectorAll('.case-body.open').forEach(el => el.classList.remove('open'));
+      document.querySelectorAll('.rot.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) {
+        body.classList.add('open');
+        icon.classList.add('open');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
