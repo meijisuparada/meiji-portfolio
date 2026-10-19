@@ -35,7 +35,7 @@
   body { -webkit-font-smoothing: antialiased; }
   @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
   .case-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-  .case-body.open { max-height: 2400px; }
+  .case-body.open { max-height: 3200px; }
   .rot { transition: transform 0.3s ease; }
   .rot.open { transform: rotate(45deg); }
   ::selection { background: rgba(184,116,36,0.2); }
@@ -203,6 +203,122 @@
     </div>
 
     <div id="case-list" class="space-y-4">
+<!-- Plynk brand lift -->
+      <div class="case rounded-3xl bg-white border border-line overflow-hidden">
+        <button class="case-toggle w-full text-left p-7 flex items-center justify-between gap-6">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-amber">Kepler Group · 2025</span>
+            <h3 class="font-serif text-2xl font-medium mt-1">Proving a six-figure YouTube push for Plynk changed minds, not just views</h3>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">YouTube Brand Lift</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Split experiment</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Audience analysis</span>
+            </div>
+          </div>
+          <span class="rot shrink-0 text-3xl font-light text-amber leading-none">+</span>
+        </button>
+        <div class="case-body px-7">
+          <div class="pb-8 border-t border-line pt-8 grid md:grid-cols-[140px_1fr] gap-8">
+            <div class="text-sm font-semibold text-inksoft">The Problem</div>
+            <p class="text-inksoft leading-relaxed">Fidelity was launching Plynk, a new trading app, and needed awareness fast. For the Q4 2025 YouTube push (Nov 18 – Dec 31), the risk was paying for cheap views without knowing whether they changed anyone's perception. I proposed a measurement-first approach to the client.</p>
+            <div class="text-sm font-semibold text-inksoft">The Test</div>
+            <p class="text-inksoft leading-relaxed">I designed and ran a YouTube Brand Lift split experiment, comparing an exposed group against a held-out control on awareness (“which of these have you heard of”), consideration (“which would you consider”), and branded search lift. Variables were three placement environments (Finance Select, Sports &amp; Tech Lineups, Demand Gen) and three message angles (transparency, app features, empowerment), with messages cut to multiple lengths from 6s to 30s.</p>
+            <div class="text-sm font-semibold text-inksoft">What We Found</div>
+            <ul class="text-inksoft leading-relaxed space-y-2 list-disc pl-5">
+              <li><span class="font-semibold text-ink">Placement:</span> Finance Select was cheapest at $0.03 CPV, but Sports &amp; Tech Lineups drove the highest absolute lift (1.8%). Going outside the finance niche paid off.</li>
+              <li><span class="font-semibold text-ink">Creative:</span> The 30s “modify or cancel any time” spot led with 2.4% absolute lift in finance environments. The 15s “ease into recurring investments” and 6s “do-it-yourself” cuts showed no measurable lift.</li>
+              <li><span class="font-semibold text-ink">Audience:</span> Gen Z drove the highest awareness lift (6.2%), while Millennials drove the highest consideration lift (1.4%).</li>
+              <li><span class="font-semibold text-ink">Search:</span> No statistically significant lift in branded search during the holiday window. Awareness grew, but it hadn't yet shown up as search behavior.</li>
+            </ul>
+            <div class="text-sm font-semibold text-inksoft">The Result</div>
+            <p class="text-inksoft leading-relaxed">I presented the findings to the client, and budget shifted toward the winners and kept running through Q1 2026. Results held at 90%+ confidence.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floodlight discrepancy -->
+      <div class="case rounded-3xl bg-white border border-line overflow-hidden">
+        <button class="case-toggle w-full text-left p-7 flex items-center justify-between gap-6">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-amber">Kepler Group · 2026</span>
+            <h3 class="font-serif text-2xl font-medium mt-1">Why YouTube conversions were off by 40%</h3>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Floodlight</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">AWS</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">SQL</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Datorama</span>
+            </div>
+          </div>
+          <span class="rot shrink-0 text-3xl font-light text-amber leading-none">+</span>
+        </button>
+        <div class="case-body px-7">
+          <div class="pb-8 border-t border-line pt-8 grid md:grid-cols-[140px_1fr] gap-8">
+            <div class="text-sm font-semibold text-inksoft">The Problem</div>
+            <p class="text-inksoft leading-relaxed">On the Fidelity account, YouTube conversions in our reporting dashboard differed from actuals by about 40%. That data drives budget decisions and client health checks, so the gap was a real risk.</p>
+            <div class="text-sm font-semibold text-inksoft">The Investigation</div>
+            <p class="text-inksoft leading-relaxed">I traced it to a mismatch between systems. YouTube was using different Floodlight configurations than the ones the Data Science &amp; Analytics team was referencing in the AWS data stream. A lot of team transition at the time had led to miscommunication about which Floodlights were in use.</p>
+            <div class="text-sm font-semibold text-inksoft">The Fix</div>
+            <p class="text-inksoft leading-relaxed">Rather than just flagging it, I worked with DS&amp;A and helped write the SQL to ingest the correct Floodlights into AWS and carry them through to Datorama.</p>
+            <div class="text-sm font-semibold text-inksoft">The Result</div>
+            <p class="text-inksoft leading-relaxed">The gap closed fully. YouTube conversion reporting now matched actuals, so health checks and budget decisions ran on numbers we could trust. That corrected data is what made the next decision possible.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Budget shift -->
+      <div class="case rounded-3xl bg-white border border-line overflow-hidden">
+        <button class="case-toggle w-full text-left p-7 flex items-center justify-between gap-6">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-amber">Kepler Group · 2026</span>
+            <h3 class="font-serif text-2xl font-medium mt-1">Moving budget away from the audience that couldn't spend</h3>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Insertion-order analysis</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">MMM / MTA</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Pacing</span>
+            </div>
+          </div>
+          <span class="rot shrink-0 text-3xl font-light text-amber leading-none">+</span>
+        </button>
+        <div class="case-body px-7">
+          <div class="pb-8 border-t border-line pt-8 grid md:grid-cols-[140px_1fr] gap-8">
+            <div class="text-sm font-semibold text-inksoft">The Problem</div>
+            <p class="text-inksoft leading-relaxed">On a Fidelity Brokerage campaign, a first-party-data insertion order was getting a large share of budget. The audience pool was small, so it struggled to spend, and CPMs ran about $10.</p>
+            <div class="text-sm font-semibold text-inksoft">The Analysis</div>
+            <p class="text-inksoft leading-relaxed">With conversion data corrected, I compared insertion orders. A customer-affinity IO had a broader, less precise audience but drove roughly 2x the conversions month over month at $3–4 CPMs. It also drove more incremental new money and more new individuals, and did it more efficiently. Harmonized MMM and MTA data, which lag, pointed the same way.</p>
+            <div class="text-sm font-semibold text-inksoft">The Decision</div>
+            <p class="text-inksoft leading-relaxed">I recommended shifting budget to the customer-affinity IO, trading targeting precision for conversions, which was the client's main KPI.</p>
+            <div class="text-sm font-semibold text-inksoft">The Result</div>
+            <p class="text-inksoft leading-relaxed">In the following 30 days, average CPM dropped about $2, CTR rose from 0.25% to 0.75%, and pacing stayed on track.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Launch Archive -->
+      <div class="case rounded-3xl bg-white border border-line overflow-hidden">
+        <button class="case-toggle w-full text-left p-7 flex items-center justify-between gap-6">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-amber">Kepler Group · 2026</span>
+            <h3 class="font-serif text-2xl font-medium mt-1">One checkbox instead of a weekly tracker cleanup</h3>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Google AppsScript</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Google Sheets</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Workflow automation</span>
+            </div>
+          </div>
+          <span class="rot shrink-0 text-3xl font-light text-amber leading-none">+</span>
+        </button>
+        <div class="case-body px-7">
+          <div class="pb-8 border-t border-line pt-8 grid md:grid-cols-[140px_1fr] gap-8">
+            <div class="text-sm font-semibold text-inksoft">The Problem</div>
+            <p class="text-inksoft leading-relaxed">At peak season our pods were launching 5+ media plans a day and turning around $1M, 12-IO builds in a week. Every launched or canceled build had to be copied by hand from the live launch tab to the archive tab, and someone had to come in daily or weekly to clean it up. Each copy meant double-checking it was the right campaign, which is the kind of task that goes wrong when everyone is busy.</p>
+            <div class="text-sm font-semibold text-inksoft">The Build</div>
+            <p class="text-inksoft leading-relaxed">Nobody owned the fix, so I taught myself Google AppsScript and built the Launch Archive script directly into the tracker. Check a box on a build, and it moves to the archive tab automatically, whether it launched or was canceled.</p>
+            <div class="text-sm font-semibold text-inksoft">The Result</div>
+            <p class="text-inksoft leading-relaxed">Archiving went from copy, paste, and verify to one click, and the recurring cleanup was no longer needed. It saves roughly a minute per archived row, and the tracker handled 100+ builds in Q4 alone. The bigger win was reliability: fewer chances to archive the wrong campaign when volume peaked. Pods 4 and 5 adopted it, and it earned me a nomination for the agency's “All Star” Comet award.</p>
+          </div>
+        </div>
+      </div>
+
       <!-- Case 1 -->
       <div class="case rounded-3xl bg-white border border-line overflow-hidden">
         <button class="case-toggle w-full text-left p-7 flex items-center justify-between gap-6">
