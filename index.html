@@ -203,7 +203,7 @@
     </div>
 
     <div id="case-list" class="space-y-4">
-<!-- Plynk brand lift -->
+      <!-- 1: Proving a six-figure YouTube push for Plynk changed minds, n -->
       <div class="case rounded-3xl bg-white border border-line overflow-hidden">
         <button class="case-toggle w-full text-left p-7 flex items-center justify-between gap-6">
           <div>
@@ -236,7 +236,33 @@
         </div>
       </div>
 
-      <!-- Floodlight discrepancy -->
+      <!-- 2: Proving which lifecycle strategy actually moves conversion -->
+      <div class="case rounded-3xl bg-white border border-line overflow-hidden">
+        <button class="case-toggle w-full text-left p-7 flex items-center justify-between gap-6">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-amber">Kepler Group · 2025</span>
+            <h3 class="font-serif text-2xl font-medium mt-1">Proving which lifecycle strategy actually moves conversion</h3>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">SQL</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">A/B testing</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">GA4</span>
+            </div>
+          </div>
+          <span class="rot shrink-0 text-3xl font-light text-amber leading-none">+</span>
+        </button>
+        <div class="case-body px-7">
+          <div class="pb-8 border-t border-line pt-8 grid md:grid-cols-[140px_1fr] gap-8">
+            <div class="text-sm font-semibold text-inksoft">The Question</div>
+            <p class="text-inksoft leading-relaxed">Which CRM messaging, audience, and lifecycle strategies could lift conversion among existing customers while improving acquisition efficiency? Stakeholders assumed more personalized lifecycle messaging would help broadly — the tests showed the real driver was segment and offer strategy, not personalization for its own sake.</p>
+            <div class="text-sm font-semibold text-inksoft">The Framework</div>
+            <p class="text-inksoft leading-relaxed">Ran multiple A/B tests across email/CRM audiences over ~90 days: segment the audience, assign treatment/control, measure conversion and CPA, run the statistical comparison, turn it into a recommendation. I connected CRM results with paid-media and GA4 data so we were judging downstream conversion, not just email opens.</p>
+            <div class="text-sm font-semibold text-inksoft">The Result</div>
+            <p class="text-inksoft leading-relaxed">Roughly <span class="font-mono text-amber">+5%</span> conversion lift and <span class="font-mono text-amber">−12%</span> CPA over 90 days, which reshaped how the client allocated budget across segments.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3: Why YouTube conversions were off by 40% -->
       <div class="case rounded-3xl bg-white border border-line overflow-hidden">
         <button class="case-toggle w-full text-left p-7 flex items-center justify-between gap-6">
           <div>
@@ -265,7 +291,7 @@
         </div>
       </div>
 
-      <!-- Budget shift -->
+      <!-- 4: Moving budget away from the audience that couldn't spend -->
       <div class="case rounded-3xl bg-white border border-line overflow-hidden">
         <button class="case-toggle w-full text-left p-7 flex items-center justify-between gap-6">
           <div>
@@ -293,111 +319,7 @@
         </div>
       </div>
 
-      <!-- Launch Archive -->
-      <div class="case rounded-3xl bg-white border border-line overflow-hidden">
-        <button class="case-toggle w-full text-left p-7 flex items-center justify-between gap-6">
-          <div>
-            <span class="text-xs font-semibold uppercase tracking-wider text-amber">Kepler Group · 2026</span>
-            <h3 class="font-serif text-2xl font-medium mt-1">One checkbox instead of a weekly tracker cleanup</h3>
-            <div class="flex flex-wrap gap-2 mt-3">
-              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Google AppsScript</span>
-              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Google Sheets</span>
-              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Workflow automation</span>
-            </div>
-          </div>
-          <span class="rot shrink-0 text-3xl font-light text-amber leading-none">+</span>
-        </button>
-        <div class="case-body px-7">
-          <div class="pb-8 border-t border-line pt-8 grid md:grid-cols-[140px_1fr] gap-8">
-            <div class="text-sm font-semibold text-inksoft">The Problem</div>
-            <p class="text-inksoft leading-relaxed">At peak season our pods were launching 5+ media plans a day and turning around $1M, 12-IO builds in a week. Every launched or canceled build had to be copied by hand from the live launch tab to the archive tab, and someone had to come in daily or weekly to clean it up. Each copy meant double-checking it was the right campaign, which is the kind of task that goes wrong when everyone is busy.</p>
-            <div class="text-sm font-semibold text-inksoft">The Build</div>
-            <p class="text-inksoft leading-relaxed">Nobody owned the fix, so I taught myself Google AppsScript and built the Launch Archive script directly into the tracker. Check a box on a build, and it moves to the archive tab automatically, whether it launched or was canceled.</p>
-            <div class="text-sm font-semibold text-inksoft">The Result</div>
-            <p class="text-inksoft leading-relaxed">Archiving went from copy, paste, and verify to one click, and the recurring cleanup was no longer needed. It saves roughly a minute per archived row, and the tracker handled 100+ builds in Q4 alone. The bigger win was reliability: fewer chances to archive the wrong campaign when volume peaked. Pods 4 and 5 adopted it, and it earned me a nomination for the agency's “All Star” Comet award.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Case 1 -->
-      <div class="case rounded-3xl bg-white border border-line overflow-hidden">
-        <button class="case-toggle w-full text-left p-7 flex items-center justify-between gap-6">
-          <div>
-            <span class="text-xs font-semibold uppercase tracking-wider text-amber">Kepler Group · 2025</span>
-            <h3 class="font-serif text-2xl font-medium mt-1">The agent that reads Slack and Gmail so no one has to at 2am</h3>
-            <div class="flex flex-wrap gap-2 mt-3">
-              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Gemini API</span>
-              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Zapier</span>
-              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Slack &amp; Gmail APIs</span>
-            </div>
-          </div>
-          <span class="rot shrink-0 text-3xl font-light text-amber leading-none">+</span>
-        </button>
-        <div class="case-body px-7">
-          <div class="pb-8 border-t border-line pt-8 grid md:grid-cols-[140px_1fr] gap-8">
-            <div class="text-sm font-semibold text-inksoft">The Problem</div>
-            <p class="text-inksoft leading-relaxed">A client email came in after hours on a Friday and sat unread until Monday morning. It only happened once — but once was enough to convince me it needed a permanent fix rather than hoping no one else got unlucky.</p>
-            <div class="text-sm font-semibold text-inksoft">The Build</div>
-            <p class="text-inksoft leading-relaxed">Built a monitoring agent on Gemini, wired through Zapier into Slack and Gmail. The hard part wasn't the AI — it was the layers around it: Zapier had no real documentation to learn from, the APIs were new to me, and the agent needed time-of-week awareness (weeknight vs. weekend urgency reads differently) plus routing logic to send each alert to the correct line-of-business channel instead of one firehose.</p>
-            <div class="text-sm font-semibold text-inksoft">The Result</div>
-            <p class="text-inksoft leading-relaxed">No more waiting until Monday. Urgent messages get classified and routed in real time, regardless of when they land.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Case 2 -->
-      <div class="case rounded-3xl bg-white border border-line overflow-hidden">
-        <button class="case-toggle w-full text-left p-7 flex items-center justify-between gap-6">
-          <div>
-            <span class="text-xs font-semibold uppercase tracking-wider text-amber">Kepler Group · 2025</span>
-            <h3 class="font-serif text-2xl font-medium mt-1">Proving which lifecycle strategy actually moves conversion</h3>
-            <div class="flex flex-wrap gap-2 mt-3">
-              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">SQL</span>
-              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">A/B testing</span>
-              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">GA4</span>
-            </div>
-          </div>
-          <span class="rot shrink-0 text-3xl font-light text-amber leading-none">+</span>
-        </button>
-        <div class="case-body px-7">
-          <div class="pb-8 border-t border-line pt-8 grid md:grid-cols-[140px_1fr] gap-8">
-            <div class="text-sm font-semibold text-inksoft">The Question</div>
-            <p class="text-inksoft leading-relaxed">Which CRM messaging, audience, and lifecycle strategies could lift conversion among existing customers while improving acquisition efficiency? Stakeholders assumed more personalized lifecycle messaging would help broadly — the tests showed the real driver was segment and offer strategy, not personalization for its own sake.</p>
-            <div class="text-sm font-semibold text-inksoft">The Framework</div>
-            <p class="text-inksoft leading-relaxed">Ran multiple A/B tests across email/CRM audiences over ~90 days: segment the audience, assign treatment/control, measure conversion and CPA, run the statistical comparison, turn it into a recommendation. I connected CRM results with paid-media and GA4 data so we were judging downstream conversion, not just email opens.</p>
-            <div class="text-sm font-semibold text-inksoft">The Result</div>
-            <p class="text-inksoft leading-relaxed">Roughly <span class="font-mono text-amber">+5%</span> conversion lift and <span class="font-mono text-amber">−12%</span> CPA over 90 days, which reshaped how the client allocated budget across segments.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Case 3 -->
-      <div class="case rounded-3xl bg-white border border-line overflow-hidden">
-        <button class="case-toggle w-full text-left p-7 flex items-center justify-between gap-6">
-          <div>
-            <span class="text-xs font-semibold uppercase tracking-wider text-amber">The Clorox Company · 2025</span>
-            <h3 class="font-serif text-2xl font-medium mt-1">Finding the moment customers were ready to buy, not just where they dropped off</h3>
-            <div class="flex flex-wrap gap-2 mt-3">
-              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Power BI</span>
-              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Journey mapping</span>
-              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Seasonality analysis</span>
-            </div>
-          </div>
-          <span class="rot shrink-0 text-3xl font-light text-amber leading-none">+</span>
-        </button>
-        <div class="case-body px-7">
-          <div class="pb-8 border-t border-line pt-8 grid md:grid-cols-[140px_1fr] gap-8">
-            <div class="text-sm font-semibold text-inksoft">The Finding</div>
-            <p class="text-inksoft leading-relaxed">Mapped the consumer journey across awareness, digital research, and retail purchase. The opportunity wasn't a dramatic funnel drop-off — it was timing. Back-to-school consistently drove a spike in cleaning and home-care intent as households reset their routines, and the existing media plan didn't move with it.</p>
-            <div class="text-sm font-semibold text-inksoft">The Shift</div>
-            <p class="text-inksoft leading-relaxed">Recommended a calendar-based GTM approach instead of running the same messaging year-round: ramp awareness and consideration ahead of the seasonal peak, and lean the messaging into "getting the home ready" for the new routine.</p>
-            <div class="text-sm font-semibold text-inksoft">The Result</div>
-            <p class="text-inksoft leading-relaxed">Informed a full-funnel, calendar-based media and retail activation plan that fed directly into quarterly GTM strategy.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Case 4 -->
+      <!-- 5: Journey Genie — a travel assistant that knows what your poin -->
       <div class="case rounded-3xl bg-white border border-line overflow-hidden">
         <button class="case-toggle w-full text-left p-7 flex items-center justify-between gap-6">
           <div>
@@ -423,7 +345,59 @@
         </div>
       </div>
 
-      <!-- Case 5 -->
+      <!-- 6: The agent that reads Slack and Gmail so no one has to at 2am -->
+      <div class="case rounded-3xl bg-white border border-line overflow-hidden">
+        <button class="case-toggle w-full text-left p-7 flex items-center justify-between gap-6">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-amber">Kepler Group · 2025</span>
+            <h3 class="font-serif text-2xl font-medium mt-1">The agent that reads Slack and Gmail so no one has to at 2am</h3>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Gemini API</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Zapier</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Slack &amp; Gmail APIs</span>
+            </div>
+          </div>
+          <span class="rot shrink-0 text-3xl font-light text-amber leading-none">+</span>
+        </button>
+        <div class="case-body px-7">
+          <div class="pb-8 border-t border-line pt-8 grid md:grid-cols-[140px_1fr] gap-8">
+            <div class="text-sm font-semibold text-inksoft">The Problem</div>
+            <p class="text-inksoft leading-relaxed">A client email came in after hours on a Friday and sat unread until Monday morning. It only happened once — but once was enough to convince me it needed a permanent fix rather than hoping no one else got unlucky.</p>
+            <div class="text-sm font-semibold text-inksoft">The Build</div>
+            <p class="text-inksoft leading-relaxed">Built a monitoring agent on Gemini, wired through Zapier into Slack and Gmail. The hard part wasn't the AI — it was the layers around it: Zapier had no real documentation to learn from, the APIs were new to me, and the agent needed time-of-week awareness (weeknight vs. weekend urgency reads differently) plus routing logic to send each alert to the correct line-of-business channel instead of one firehose.</p>
+            <div class="text-sm font-semibold text-inksoft">The Result</div>
+            <p class="text-inksoft leading-relaxed">No more waiting until Monday. Urgent messages get classified and routed in real time, regardless of when they land.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7: One checkbox instead of a weekly tracker cleanup -->
+      <div class="case rounded-3xl bg-white border border-line overflow-hidden">
+        <button class="case-toggle w-full text-left p-7 flex items-center justify-between gap-6">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-amber">Kepler Group · 2026</span>
+            <h3 class="font-serif text-2xl font-medium mt-1">One checkbox instead of a weekly tracker cleanup</h3>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Google AppsScript</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Google Sheets</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Workflow automation</span>
+            </div>
+          </div>
+          <span class="rot shrink-0 text-3xl font-light text-amber leading-none">+</span>
+        </button>
+        <div class="case-body px-7">
+          <div class="pb-8 border-t border-line pt-8 grid md:grid-cols-[140px_1fr] gap-8">
+            <div class="text-sm font-semibold text-inksoft">The Problem</div>
+            <p class="text-inksoft leading-relaxed">At peak season our pods were launching 5+ media plans a day and turning around $1M, 12-IO builds in a week. Every launched or canceled build had to be copied by hand from the live launch tab to the archive tab, and someone had to come in daily or weekly to clean it up. Each copy meant double-checking it was the right campaign, which is the kind of task that goes wrong when everyone is busy.</p>
+            <div class="text-sm font-semibold text-inksoft">The Build</div>
+            <p class="text-inksoft leading-relaxed">Nobody owned the fix, so I taught myself Google AppsScript and built the Launch Archive script directly into the tracker. Check a box on a build, and it moves to the archive tab automatically, whether it launched or was canceled.</p>
+            <div class="text-sm font-semibold text-inksoft">The Result</div>
+            <p class="text-inksoft leading-relaxed">Archiving went from copy, paste, and verify to one click, and the recurring cleanup was no longer needed. It saves roughly a minute per archived row, and the tracker handled 100+ builds in Q4 alone. The bigger win was reliability: fewer chances to archive the wrong campaign when volume peaked. Pods 4 and 5 adopted it, and it earned me a nomination for the agency's “All Star” Comet award.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8: Fin — a paycheck calculator that explains itself -->
       <div class="case rounded-3xl bg-white border border-line overflow-hidden">
         <button class="case-toggle w-full text-left p-7 flex items-center justify-between gap-6">
           <div>
@@ -447,6 +421,33 @@
           </div>
         </div>
       </div>
+
+      <!-- 9: Finding the moment customers were ready to buy, not just whe -->
+      <div class="case rounded-3xl bg-white border border-line overflow-hidden">
+        <button class="case-toggle w-full text-left p-7 flex items-center justify-between gap-6">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-amber">The Clorox Company · 2025</span>
+            <h3 class="font-serif text-2xl font-medium mt-1">Finding the moment customers were ready to buy, not just where they dropped off</h3>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Power BI</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Journey mapping</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-paperalt text-inksoft">Seasonality analysis</span>
+            </div>
+          </div>
+          <span class="rot shrink-0 text-3xl font-light text-amber leading-none">+</span>
+        </button>
+        <div class="case-body px-7">
+          <div class="pb-8 border-t border-line pt-8 grid md:grid-cols-[140px_1fr] gap-8">
+            <div class="text-sm font-semibold text-inksoft">The Finding</div>
+            <p class="text-inksoft leading-relaxed">Mapped the consumer journey across awareness, digital research, and retail purchase. The opportunity wasn't a dramatic funnel drop-off — it was timing. Back-to-school consistently drove a spike in cleaning and home-care intent as households reset their routines, and the existing media plan didn't move with it.</p>
+            <div class="text-sm font-semibold text-inksoft">The Shift</div>
+            <p class="text-inksoft leading-relaxed">Recommended a calendar-based GTM approach instead of running the same messaging year-round: ramp awareness and consideration ahead of the seasonal peak, and lean the messaging into "getting the home ready" for the new routine.</p>
+            <div class="text-sm font-semibold text-inksoft">The Result</div>
+            <p class="text-inksoft leading-relaxed">Informed a full-funnel, calendar-based media and retail activation plan that fed directly into quarterly GTM strategy.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
